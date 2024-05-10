@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@master
+      - name: Set up Rust
+        uses: actions/setup-rust@v1
+        with:
+          toolchain: stable
       - name: Generate the artifacts
         uses: skx/github-action-build@master
       - name: Upload the artifacts
