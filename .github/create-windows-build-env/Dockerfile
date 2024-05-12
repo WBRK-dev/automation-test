@@ -3,6 +3,8 @@ FROM docker.io/library/rust:1.54.0-slim-bullseye
 
 ENV KEYRINGS /usr/local/share/keyrings
 
+ENTRYPOINT [ "build_env" ]
+
 RUN set -eux; \
     mkdir -p $KEYRINGS; \
     apt-get update && apt-get install -y gpg curl; \
