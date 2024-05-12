@@ -17,6 +17,9 @@ jobs:
           default: true
           override: true
 
+      - name: Generate Windows build env
+        uses: ./.github/create-windows-build-env@master
+
       - name: Generate the artifacts
         uses: skx/github-action-build@master
         
