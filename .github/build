@@ -1,4 +1,5 @@
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+$HOME/.cargo/env
 $HOME/.cargo/bin/cargo build -r
 $HOME/.cargo/bin/rustup target add x86_64-pc-windows-gnu
 $HOME/.cargo/bin/cargo build --target x86_64-pc-windows-gnu
