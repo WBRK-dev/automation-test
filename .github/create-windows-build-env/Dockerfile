@@ -3,7 +3,7 @@ FROM docker.io/library/rust:1.54.0-slim-bullseye
 
 ENV KEYRINGS /usr/local/share/keyrings
 
-COPY --chmod=777 build_env /usr/local/bin/build_env
+COPY build_env /usr/local/bin/build_env
 
 RUN chmod -R 777 /usr/local/bin/build_env
 
