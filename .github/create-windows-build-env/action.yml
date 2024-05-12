@@ -1,4 +1,4 @@
 name: 'create-windows-build-env'
 runs:
   using: 'docker'
-  image: '.github/Dockerfile'
+  image: '.github/create-windows-build-env/Dockerfile'
