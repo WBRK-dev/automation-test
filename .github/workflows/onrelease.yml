@@ -17,11 +17,12 @@ jobs:
           default: true
           override: true
 
-      - name: Cache Layer for xwin
+      - name: Cache layer for xwin
         uses: actions/cache@v4.0.2
         with:
           path: /xwin
-          key: ${{ runner.os }}-xwin-output
+          key: ${{ runner.os }}-xwin-extracted-sdk-crt
+          save-always: true
 
       - name: Generate Windows build env
         uses: ./.github/create-windows-build-env
