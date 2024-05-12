@@ -5,4 +5,4 @@ ENV KEYRINGS /usr/local/share/keyrings
 
 COPY build_env /usr/local/bin/build_env
 
-ENTRYPOINT [ "build_env" ]
+ENTRYPOINT [ "/usr/local/bin/build_env" ]
