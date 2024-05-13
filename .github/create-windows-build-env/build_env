@@ -5,12 +5,17 @@
 #     curl --fail https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor > $KEYRINGS/llvm.gpg; \
 #     echo "deb [signed-by=$KEYRINGS/llvm.gpg] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-13 main" > /etc/apt/sources.list.d/llvm.list;
 
-if [ ! -e $HOME/.cargo/cargo ]; then
+export FORCE_HOME=/home/runner
+
+echo $HOME
+echo $FORCE_HOME
+
+if [ ! -e $FORCE_HOME/.cargo/cargo ]; then
     echo "Cargo command not found"
     exit 1
 fi
 
-if [ ! -e $HOME/.cargo/rustup ]; then
+if [ ! -e $FORCE_HOME/.cargo/rustup ]; then
     echo "Rustup command not found"
     exit 1
 fi
@@ -73,7 +78,7 @@ rm -rf /var/lib/apt/lists/*
 # # Retrieve the std lib for the target
 # RUN rustup target add x86_64-pc-windows-msvc
 
-rustup target add x86_64-pc-windows-msvc
+$FORCE_HOME/.cargo/rustup target add x86_64-pc-windows-msvc
 
 # RUN set -eux; \
 #     xwin_version="0.5.2"; \
