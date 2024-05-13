@@ -1,0 +1,4 @@
+name: 'install-rust-toolchain'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
