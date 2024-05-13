@@ -5,6 +5,16 @@
 #     curl --fail https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor > $KEYRINGS/llvm.gpg; \
 #     echo "deb [signed-by=$KEYRINGS/llvm.gpg] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-13 main" > /etc/apt/sources.list.d/llvm.list;
 
+if [ ! -e $HOME/.cargo/cargo ]; then
+    echo "Cargo command not found"
+    exit 1
+fi
+
+if [ ! -e $HOME/.cargo/rustup ]; then
+    echo "Rustup command not found"
+    exit 1
+fi
+
 mkdir -p $KEYRINGS
 apt-get update && apt-get install -y gpg curl 
 
