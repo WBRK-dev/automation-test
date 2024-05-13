@@ -5,6 +5,8 @@
 #     curl --fail https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor > $KEYRINGS/llvm.gpg; \
 #     echo "deb [signed-by=$KEYRINGS/llvm.gpg] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-13 main" > /etc/apt/sources.list.d/llvm.list;
 
+echo $CARGO_BIN
+
 ls $CARGO_BIN
 
 if [ ! -e $CARGO_BIN/cargo ]; then
