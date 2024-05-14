@@ -31,10 +31,9 @@
 
 name: Releases
 
-on: 
+on:
   push:
-    tags:
-    - '*'
+    branches: ["master"]
 
 jobs:
 
