@@ -2,6 +2,7 @@ on:
   release:
     types: [created]
 name: Handle Release
+runs-on: self-hosted
 jobs:
   generate:
     name: Create binaries and push to latest release
