@@ -9,9 +9,6 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@master
-        
-      - name: Install latest rust toolchain
-        uses: ./.github/install-rust-toolchain
 
       - name: Cache layer for xwin
         uses: actions/cache@v4.0.2
@@ -19,22 +16,8 @@ jobs:
           path: /xwin
           key: ${{ runner.os }}-xwin-extracted-sdk-crt
           save-always: true
-
-      - name: Generate Windows build env
-        uses: ./.github/create-windows-build-env
-
-      - name: Generate the artifacts
-        uses: skx/github-action-build@master
         
-      - name: Upload the Linux artifacts
-        uses: skx/github-action-publish-binaries@master
+      - name: Build and upload binaries
+        uses: ./.github/build-and-upload
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: '/github/workspace/target/release/automation-test'
-      - name: Upload the Windows artifacts
-        uses: skx/github-action-publish-binaries@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: '/github/workspace/target/release/automation-test.exe'

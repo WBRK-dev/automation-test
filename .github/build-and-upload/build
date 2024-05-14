@@ -1,0 +1,7 @@
+apt-get update
+
+apt-get -y install curl
+
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+export CARGO_BIN=/usr/local/cargo/bin
