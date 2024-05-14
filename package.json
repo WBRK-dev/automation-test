@@ -1,6 +1,6 @@
 {
   "name": "automation-test",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "standard-release": "^0.2.0",
     "standard-version": "^9.5.0"
   }
 }
