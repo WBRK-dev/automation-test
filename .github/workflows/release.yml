@@ -50,6 +50,7 @@ jobs:
       with:
         skip-on-empty: false
         github-token: ${{ secrets.GITHUB_TOKEN }}
+        version-file: "./package.json,Cargo.toml"
 
     - uses: ncipollo/release-action@v1
       with:
