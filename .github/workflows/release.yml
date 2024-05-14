@@ -54,5 +54,6 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         generateReleaseNotes: true
+        tag: ${{ steps.changelog.outputs.tag }}
         name: ${{ steps.changelog.outputs.tag }}
         body: ${{ steps.changelog.outputs.clean_changelog }}
