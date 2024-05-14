@@ -2,11 +2,10 @@ on:
   release:
     types: [created]
 name: Handle Release
-runs-on: self-hosted
 jobs:
   generate:
     name: Create binaries and push to latest release
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout the repository
         uses: actions/checkout@master
